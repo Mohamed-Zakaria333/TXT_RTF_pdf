@@ -1,0 +1,430 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 LucidaGrande;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red28\green30\blue36;\red255\green255\blue255;\red135\green134\blue154;
+\red249\green249\blue249;\red50\green79\blue217;\red34\green88\blue157;\red67\green67\blue67;\red244\green244\blue244;
+\red235\green236\blue237;\red0\green0\blue120;\red234\green234\blue234;\red0\green0\blue0;\red37\green127\blue159;
+\red107\green0\blue1;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c14510\c15686\c18824;\cssrgb\c100000\c100000\c100000;\cssrgb\c60000\c60000\c66667;
+\cssrgb\c98039\c98039\c98039;\cssrgb\c25490\c41176\c88235;\cssrgb\c16863\c42745\c67843;\cssrgb\c33333\c33333\c33333;\cssrgb\c96471\c96471\c96471;
+\cssrgb\c93725\c94118\c94510;\cssrgb\c0\c0\c54510;\cssrgb\c93333\c93333\c93333;\cssrgb\c0\c0\c0;\cssrgb\c16863\c56863\c68627;
+\cssrgb\c50196\c0\c0;\cssrgb\c50196\c50196\c50196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{circle\}}{\leveltext\leveltemplateid2\'01\uc0\u9702 ;}{\levelnumbers;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs64 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Swift Optionals
+\f1\b\fs32 \cf4 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3 In this article, you will learn about optional, its use cases and optional handling in Swift.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs38\fsmilli19200 \cf2 \cb5 Table of Contents\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\b0\fs32 \cf6 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+What is Swift Optional?\cf2 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+How to declare an optional?\cf2 \cb1 \
+\ls1\ilvl0\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Assign and access value from optional\cf2 \cb1 \
+\ls1\ilvl0\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Explicitly declared unwrapped optional\cf2 \cb1 \
+\ls1\ilvl0\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Fatal error when accessing unwrapped optional\cf2 \cb1 \
+\ls1\ilvl0\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Optional handling\cf2 \cb1 \
+\pard\tx940\tx1440\pardeftab720\li1440\fi-1440\partightenfactor0
+\ls1\ilvl1\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	
+\f2 \uc0\u9702 
+\f1 	}\expnd0\expndtw0\kerning0
+If-statement\cf2 \cb1 \
+\ls1\ilvl1\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	
+\f2 \uc0\u9702 
+\f1 	}\expnd0\expndtw0\kerning0
+If-let statement\cf2 \cb1 \
+\ls1\ilvl1\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	
+\f2 \uc0\u9702 
+\f1 	}\expnd0\expndtw0\kerning0
+Guard statement\cf2 \cb1 \
+\ls1\ilvl1\cf7 \cb5 \kerning1\expnd0\expndtw0 {\listtext	
+\f2 \uc0\u9702 
+\f1 	}\expnd0\expndtw0\kerning0
+Nil-coalescing operator\cf2 \cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \cb3 In the previous article, we learned about different data types available in Swift and also noticed variable or constant declared of those types contains a default value.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs31\fsmilli15680 \cf8 \cb3 Example:
+\b0\fs32 \cf2 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 let someValue = Int()\
+print(someValue)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 0\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 However there is another data type in Swift called Optional, whose default value is a null value (
+\f3\fs27\fsmilli13760 \cb10 nil
+\f1\fs32 \cb3 ). You can use optional when you want a variable or constant contain no value in it. An optional type may contain a value or absent a value (a null value).\cb1 \
+\cb3 Non technically, you can think optional as a shoe box. The shoe box may or may not contain a shoe in it. So, you should know beforehand while accessing the shoe from the box.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs51\fsmilli25600 \cf2 \cb3 How to declare an Optional?\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0\fs32 \cf2 \cb3 You can simply represent a Data type as Optional by appending 
+\f3\fs27\fsmilli13760 \cb10 !
+\f1\fs32 \cb3  or 
+\f3\fs27\fsmilli13760 \cb10 ?
+\f1\fs32 \cb3  to the 
+\f3\fs27\fsmilli13760 \cb10 Type
+\f1\fs32 \cb3 . If an optional contains a value in it, it returns value as 
+\f3\fs27\fsmilli13760 \cb10 Optional<Value>
+\f1\fs32 \cb3 , if not it returns 
+\f3\fs27\fsmilli13760 \cb10 nil
+\f1\fs32 \cb3 .\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 Example 1: How to declare an optional in Swift?\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs30 \cf11 \cb12 var\cf2  someValue:\cf14 Int\cf2 ?\
+\cf11 var\cf2  someAnotherValue:\cf14 Int\cf2 !\
+\cf11 print\cf2 (someValue)\
+\cf11 print\cf2 (someAnotherValue)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 nil\
+nil\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 In the above program, we have initialized a optional type using 
+\f3\fs27\fsmilli13760 \cb10 ?
+\f1\fs32 \cb3  and 
+\f3\fs27\fsmilli13760 \cb10 !
+\f1\fs32 \cb3 . Both ways are valid to create an optional but there is one major difference which we will explore below.\cb1 \
+\cb3 Declaring an optional Int means the variable will either have an integer value or no value. Since no value is assigned to the variable, you can see both 
+\f3\fs27\fsmilli13760 \cb10 print
+\f1\fs32 \cb3  statement outputs 
+\f3\fs27\fsmilli13760 \cb10 nil
+\f1\fs32 \cb3  on the screen.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 Example 2: Assigning and accessing a value from an optional\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs30 \cf11 \cb12 let\cf2  someValue:\cf14 Int\cf2 ? = \cf15 5\cf2 \
+\cf11 print\cf2 (someValue)\
+\cf11 print\cf2 (someValue!)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 Optional(5)\
+5\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 In the above program, we have declared an optional of 
+\f3\fs27\fsmilli13760 \cb10 Int
+\f1\fs32 \cb3  type and assigned value 5 in it.\cb1 \
+\cb3 As you can see, printing the optional as 
+\f3\fs27\fsmilli13760 \cb10 print(someValue)
+\f1\fs32 \cb3  doesn't give you 
+\f3\fs27\fsmilli13760 \cb10 5
+\f1\fs32 \cb3  but 
+\f3\fs27\fsmilli13760 \cb10 Optional(5)
+\f1\fs32 \cb3 . It is of the form as described above: 
+\f3\fs27\fsmilli13760 \cb10 Optional<Value>
+\f1\fs32 \cb3 . In order to access the 
+\f3\fs27\fsmilli13760 \cb10 <Value>
+\f1\fs32 \cb3  from it, we need a mechanism called 
+\b\fs31\fsmilli15680 \cf8 unwrapping
+\b0\fs32 \cf2 .\cb1 \
+\cb3 You can unwrap an optional by appending 
+\f3\fs27\fsmilli13760 \cb10 !
+\f1\fs32 \cb3  character at the end of the variable/constant as in the next line 
+\f3\fs27\fsmilli13760 \cb10 print(someValue!)
+\f1\fs32 \cb3 . 
+\f3\fs27\fsmilli13760 \cb10 print(someValue!)
+\f1\fs32 \cb3  unwraps the optional and outputs 
+\f3\fs27\fsmilli13760 \cb10 5
+\f1\fs32 \cb3  on the screen.\cb1 \
+\cb3 However, remember, this kind of unwrapping mechanism should only be used when you are certain that the optional will sure have a value when you access it.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 Example 3: Explicitly declaring an unwrapped optional\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0\fs32 \cf2 \cb3 You can also create an unwrapped optional as:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf11 \cb12 let\cf2  someValue:\cf14 Int\cf2 ! = \cf15 5\cf2 \
+\cf11 print\cf2 (someValue)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 5\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 In the above program, 
+\f3\fs27\fsmilli13760 \cb10 Int!
+\f1\fs32 \cb3  creates a unwrapped optional, which automatically unwraps the value while you access it so that you don't need to everytime append the 
+\f3\fs27\fsmilli13760 \cb10 !
+\f1\fs32 \cb3  character.\cb1 \
+\cb3 Be certain while you use these kinds of optionals, the variable will always need to have a value when you access it. If you don't, you will get a fatal error crash.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 Example 4: Fatal error when accessing a null unwrapped optional\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs30 \cf11 \cb12 var\cf2  someValue:\cf14 Int\cf2 !\
+\cf11 var\cf2  unwrappedValue:\cf14 Int\cf2  = someValue \cf16 //crashes due to this line\cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, you will get a crash as 
+\b\fs31\fsmilli15680 \cf8 fatal error: unexpectedly found nil while unwrapping an Optional value
+\b0\fs32 \cf2  because the code 
+\f3\fs27\fsmilli13760 \cb10 unwrappedValue:Int = someValue
+\f1\fs32 \cb3  tries to assign value from Optional 
+\f3\fs27\fsmilli13760 \cb10 someValue
+\f1\fs32 \cb3  to variable 
+\f3\fs27\fsmilli13760 \cb10 unwrappedValue
+\f1\fs32 \cb3 .\cb1 \
+\
+\
+\
+\cb3 However, 
+\f3\fs27\fsmilli13760 \cb10 somevalue
+\f1\fs32 \cb3  is an 
+\f3\fs27\fsmilli13760 \cb10 Optional
+\f1\fs32 \cb3  type that contains 
+\f3\fs27\fsmilli13760 \cb10 nil
+\f1\fs32 \cb3  value. Trying to assign nil value to variable 
+\f3\fs27\fsmilli13760 \cb10 unwrappedValue
+\f1\fs32 \cb3  which is not an optional will lead to crash.\cb1 \
+\cb3 There are different techniques to handle this case which are explained below.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs51\fsmilli25600 \cf2 \cb3 Optional Handling\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0\fs32 \cf2 \cb3 In order to use value of an optional, it needs to be unwrapped. Better way to use optional value is by conditional unwrapping rather than force unwrapping using 
+\f3\fs27\fsmilli13760 \cb10 !
+\f1\fs32 \cb3  operator.\cb1 \
+\cb3 This is because conditionally unwrapping asks 
+\b\fs31\fsmilli15680 \cf8 Check if this variable has a value?
+\b0\fs32 \cf2  . If yes, give the value, otherwise it will handle the nil case.\cb1 \
+\cb3 On the contrary, force unwrapping says 
+\b\fs31\fsmilli15680 \cf8 This variable does have a value while you use it
+\b0\fs32 \cf2 . Therefore, when you force unwrap a variable that is nil, your program will throw an 
+\b\fs31\fsmilli15680 \cf8 unexpectedly found nil while unwrapping an optional exception and crash
+\b0\fs32 \cf2 . Some of the techniques for conditional unwrapping are explained below:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 1. If-statement\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0\fs32 \cf2 \cb3 You can use if statement and compare optional with nil to find out whether a optional contains a value or not. You can use the comparison operator "equal to" operator (
+\f3\fs27\fsmilli13760 \cb10 ==
+\f1\fs32 \cb3 ) or the "not equal to" operator (
+\f3\fs27\fsmilli13760 \cb10 !=
+\f1\fs32 \cb3 ) in the if statement.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs38\fsmilli19200 \cf2 \cb3 Example 5: Optional handling with if else statement\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs30 \cf11 \cb12 var\cf2  someValue:\cf14 Int\cf2 ?\
+\cf11 var\cf2  someAnotherValue:\cf14 Int\cf2 ! = \cf15 0\cf2 \
+        \
+\cf11 if\cf2  someValue != \cf11 nil\cf2  \{\
+	\cf11 print\cf2 (\cf15 "It has some value \\(someValue!)"\cf2 )\
+\} \cf11 else\cf2  \{\
+	\cf11 print\cf2 (\cf15 "doesn't contain value"\cf2 )\
+\}\
+        \
+\cf11 if\cf2  someAnotherValue != \cf11 nil\cf2  \{\
+	\cf11 print\cf2 (\cf15 "It has some value \\(someAnotherValue!)"\cf2 )\
+\} \cf11 else\cf2  \{\
+	\cf11 print\cf2 (\cf15 "doesn't contain value"\cf2 )\
+\}\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 doesn't contain value\
+It has some value 0\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 In the above program, the code inside if statement executes if an optional contain a value, otherwise the statement inside the else block executes. The major drawback of optional handling using this technique is, you still need to unwrap the value from optional using 
+\f3\fs27\fsmilli13760 \cb10 !
+\f1\fs32 \cb3  operator.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 2. Optional Binding (if-let)\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0\fs32 \cf2 \cb3 Optional binding helps you to find out whether an optional contains a value or not. If an optional contains a value, that value is available as a temporary constant or variable. Therefore, optional binding can be used with if statement to check for a value inside an optional, and to extract that value into a constant or variable in a single action.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs38\fsmilli19200 \cf2 \cb3 Example 5: Optional handling using if let statement\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs30 \cf11 \cb12 var\cf2  someValue:\cf14 Int\cf2 ?\
+\cf11 var\cf2  someAnotherValue:\cf14 Int\cf2 ! = \cf15 0\cf2 \
+       \
+\cf11 if\cf2  \cf11 let\cf2  temp = someValue \{\
+	\cf11 print\cf2 (\cf15 "It has some value \\(temp)"\cf2 ) \
+\} \cf11 else\cf2  \{\
+	\cf11 print\cf2 (\cf15 "doesn't contain value"\cf2 )\
+\}\
+        \
+\cf11 if\cf2  \cf11 let\cf2  temp = someAnotherValue \{\
+	\cf11 print\cf2 (\cf15 "It has some value \\(temp)"\cf2 )\
+\} \cf11 else\cf2  \{\
+	\cf11 print\cf2 (\cf15 "doesn't contain value"\cf2 )      \
+\}\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 doesn't contain value\
+It has some value 0\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 In the above program, the code inside if statement executes if the optional contains a value. Otherwise the else block gets executed. The 
+\f3\fs27\fsmilli13760 \cb10 if-let
+\f1\fs32 \cb3  statement also automatically unwraps the value and places the unwrapped value in 
+\f3\fs27\fsmilli13760 \cb10 temp
+\f1\fs32 \cb3  constant. This technique has major advantage because you don't need to forcely unwrap the value although being certain an optional contains a value.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 3. Guard statement\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0\fs32 \cf2 \cb3 You can use guard to handle optionals in Swift. Don't worry if you don't know what guard is. For now, just think of guard as an 
+\f3\fs27\fsmilli13760 \cb10 if-else
+\f1\fs32 \cb3  condition with no if block. If the condition fails, else statement is executed. If not, next statement is executed. See {\field{\*\fldinst{HYPERLINK "https://www.programiz.com/swift-programming/guard-statement"}}{\fldrslt \cf7 Swift guard}} for more details.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs38\fsmilli19200 \cf2 \cb3 Example 6: Optional handling using guard-let\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs30 \cf2 \cb12 func testFunction() \{\
+	\cf11 let\cf2  someValue:\cf14 Int\cf2 ? = \cf15 5\cf2 \
+	guard \cf11 let\cf2  temp = someValue \cf11 else\cf2  \{\
+		\cf11 return\cf2 \
+	\}\
+	\cf11 print\cf2 (\cf15 "It has some value \\(temp)"\cf2 )\
+\}\
+\
+testFunction()\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 It has some value 5\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 In the above program, the guard contains a condition whether an optional 
+\f3\fs27\fsmilli13760 \cb10 someValue
+\f1\fs32 \cb3  contains a value or not. If it contains a value then 
+\f3\fs27\fsmilli13760 \cb10 guard-let
+\f1\fs32 \cb3  statement automatically unwraps the value and places the unwrapped value in 
+\f3\fs27\fsmilli13760 \cb10 temp
+\f1\fs32 \cb3  constant. Otherwise, else block gets executed and and it would return to the calling function. Since, the optional contains a value, 
+\f3\fs27\fsmilli13760 \cb10 print
+\f1\fs32 \cb3  function is called.\cb1 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\b\fs44\fsmilli22400 \cf2 \cb3 4. Nil-coalescing operator\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b0\fs32 \cf2 \cb3 In Swift, you can also use nil-coalescing operator to check whether a optional contains a value or not. It is defined as 
+\f3\fs27\fsmilli13760 \cb10 (a ?? b)
+\f1\fs32 \cb3 . It unwraps an optional 
+\f3\fs27\fsmilli13760 \cb10 a
+\f1\fs32 \cb3  and returns it if it contains a value, or returns a default value 
+\f3\fs27\fsmilli13760 \cb10 b
+\f1\fs32 \cb3  if 
+\f3\fs27\fsmilli13760 \cb10 a
+\f1\fs32 \cb3  is nil.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\b\fs38\fsmilli19200 \cf2 \cb3 Example 7: Optional handling using nil-coalescing operator\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b0\fs30 \cf11 \cb12 var\cf2  someValue:\cf14 Int\cf2 !\
+\cf11 let\cf2  defaultValue = \cf15 5\cf2 \
+\cf11 let\cf2  unwrappedValue:\cf14 Int\cf2  = someValue ?? defaultValue\
+\cf11 print\cf2 (unwrappedValue)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 5\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 In the above program, variable 
+\f3\fs27\fsmilli13760 \cb10 someValue
+\f1\fs32 \cb3  is defined optional and contains 
+\f3\fs27\fsmilli13760 \cb10 nil
+\f1\fs32 \cb3  value. The nil coalescing operator fails to unwrap the optional therefore returns 
+\f3\fs27\fsmilli13760 \cb10 defaultValue
+\f1\fs32 \cb3 . Therefore the statement 
+\f3\fs27\fsmilli13760 \cb10 print(unwrappedValue)
+\f1\fs32 \cb3  outputs 5 in the console.\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf11 \cb12 var\cf2  someValue:\cf14 Int\cf2 ? = \cf15 10\cf2 \
+\cf11 let\cf2  defaultValue = \cf15 5\cf2 \
+\cf11 let\cf2  unwrappedValue:\cf14 Int\cf2  = someValue ?? defaultValue\
+\cf11 print\cf2 (unwrappedValue)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 When you run the program, the output will be:\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf2 \cb9 10\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs32 \cf2 \cb3 However, in the above program, optional variable 
+\f3\fs27\fsmilli13760 \cb10 someValue
+\f1\fs32 \cb3  is initialized with value 10. So, the nil coalescing operator successfully unwraps the value from 
+\f3\fs27\fsmilli13760 \cb10 someValue
+\f1\fs32 \cb3 . Therefore, the statement 
+\f3\fs27\fsmilli13760 \cb10 someValue ?? defaultValue
+\f1\fs32 \cb3  returns 10 and the statement 
+\f3\fs27\fsmilli13760 \cb10 print(unwrappedValue)
+\f1\fs32 \cb3  outputs 10 in the console.}
